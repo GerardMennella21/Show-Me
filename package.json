@@ -23,5 +23,8 @@
     "url": "https://github.com/MenderesKoc/deep-thoughts/issues"
   },
   "homepage": "https://github.com/MenderesKoc/deep-thoughts#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+
+  }
 }

@@ -1,20 +1,58 @@
 import React from 'react';
 import './App.css';
+
+// Components
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Pages
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+
+// Apollo/Routes
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+const httpLink = createHttpLink({
+  uri: '/graphql'
+});
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+})
+
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Header />
-        <main>
-         
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Header />
+          <main>
+            <Routes>
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>    
   );
 }
 

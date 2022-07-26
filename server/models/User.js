@@ -20,6 +20,12 @@ const userSchema = new Schema (
             required: true,
             minLength: 5
         },
+        images: [
+          {
+            type: Schema.Types.ObjectId,
+            ref: 'Image'
+          }          
+        ],
         comments: [
             {
               type: Schema.Types.ObjectId,
