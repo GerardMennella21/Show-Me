@@ -1,0 +1,12 @@
+{
+ "iframes": [
+        {
+            "title": "test",
+            "src": "test"
+        },
+        {
+            "title": "test 2",
+            "src": "test 2" 
+        }
+    ]
+}
