@@ -2,9 +2,9 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const commentSchema = new Schema(
+const imageSchema = new Schema(
     {
-        commentText: {
+        imageText: {
             type: String,
             required: 'You need to leave a thought!',
             minlength: 1,
@@ -28,10 +28,10 @@ const commentSchema = new Schema(
     }
 );
 
-commentSchema.virtual('reactionCount').get(function() {
+imageSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
-const Comment = model('Comment', commentSchema);
+const Image = model('Image', imageSchema);
 
-module.exports = Comment;
+module.exports = Image;
