@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import { Flex, Spacer } from '@chakra-ui/react'
 
 export default function Header() {
     const logout = event => {
@@ -9,13 +10,13 @@ export default function Header() {
     };
 
     return (
-        <header>
-            <div>
+        <header className="">
+            <Flex>
                 <Link to="/">
                 <h1>Show Me</h1>
                 </Link>
-
-                <nav>
+                <Spacer />
+                <nav className="">
                     {Auth.loggedIn() ? (
                         <>
                             <Link to="/profile">My Profile</Link>
@@ -28,7 +29,7 @@ export default function Header() {
                         </>
                     )}
                 </nav>
-            </div>
+            </Flex>
         </header>
     );
 };

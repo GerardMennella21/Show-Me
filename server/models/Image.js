@@ -6,7 +6,7 @@ const imageSchema = new Schema(
     {
         imageText: {
             type: String,
-            required: 'You need to leave a thought!',
+            required: 'You need to add a caption!',
             minlength: 1,
             maxlength: 280
         },
