@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { Flex, Spacer } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 
 export default function Header() {
     const logout = event => {
@@ -11,23 +12,29 @@ export default function Header() {
 
     return (
         <header className="">
-            <Flex>
-                <Link to="/">
+            <Flex alignItems='center'>
+                {/* <Link to="/"> */}
                 <h1>Show Me</h1>
-                </Link>
+                {/* </Link> */}
                 <Spacer />
                 <nav className="">
-                    {Auth.loggedIn() ? (
-                        <>
-                            <Link to="/profile">My Profile</Link>
-                            <a href="/" onClick={logout}>Logout</a>
-                        </>
-                    ) : (
-                        <>
-                            <Link to="/login">Login</Link>
-                            <Link to="/signup">Signup</Link>
-                        </>
-                    )}
+                    <Tabs variant='soft-rounded' colorScheme='green'>
+                        <TabList>
+                            {Auth.loggedIn() ? (
+                                <>
+                                    <Link to="/profile">My Profile</Link>
+                                    <a href="/" onClick={logout}>Logout</a>
+                                </>
+                            ) : (
+                                <>
+                                    <Tab><Link to="/login">Login</Link></Tab>
+                                    <Tab><Link to="/signup">Signup</Link></Tab>
+                                </>
+                            )}
+                        </TabList>
+                    </Tabs>    
+                        
+                    
                 </nav>
             </Flex>
         </header>

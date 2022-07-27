@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 // Pages
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+// import Home from './pages/Home'
 
 // Apollo/Routes
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
@@ -39,6 +40,10 @@ function App() {
           <Header />
           <main>
             <Routes>
+              {/* <Route
+                path="/"
+                element={<Home />}
+              /> */}
               <Route
                 path="/login"
                 element={<Login />}
