@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { FormControl, Button, FormLabel, FormErrorMessage, FormHelperText, Input } from '@chakra-ui/react'
 
 const Signup = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
@@ -38,14 +39,12 @@ const Signup = () => {
   };
 
   return (
-    <main className='flex-row justify-center mb-4'>
-      <div className='col-12 col-md-6'>
-        <div className='card'>
-          <h4 className='card-header'>Sign Up</h4>
-          <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className='form-input'
+      <div className=''>
+        <div className=''>
+          <h4 className=''>Sign Up</h4>
+          <div className=''>
+            <FormControl>
+              <Input
                 placeholder='Your username'
                 name='username'
                 type='username'
@@ -53,8 +52,7 @@ const Signup = () => {
                 value={formState.username}
                 onChange={handleChange}
               />
-              <input
-                className='form-input'
+              <Input
                 placeholder='Your email'
                 name='email'
                 type='email'
@@ -62,8 +60,7 @@ const Signup = () => {
                 value={formState.email}
                 onChange={handleChange}
               />
-              <input
-                className='form-input'
+              <Input
                 placeholder='******'
                 name='password'
                 type='password'
@@ -71,15 +68,15 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block w-100' type='submit'>
+              </FormControl>
+              <Button onClick={handleFormSubmit}>
                 Submit
-              </button>
-            </form>
+              </Button>
+            
             {error && <div>Sign up failed</div>}
           </div>
         </div>
       </div>
-    </main>
   );
 };
 
