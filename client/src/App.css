@@ -2,12 +2,12 @@
 
 main {
   min-height: 100vh;
-
+  background-image: linear-gradient(90deg, #A67DB8, #18F2B2);
 }
 
 header {
-  padding-left: 10px;
   border-bottom: 1px solid black;
+  position: sticky;
   top: 0;
   background-image: linear-gradient(80deg, #111D4A, #B1EDE8);
 }

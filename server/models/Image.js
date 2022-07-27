@@ -19,8 +19,11 @@ const imageSchema = new Schema(
             type: String,
             required: true
         },
+<<<<<<< HEAD
         photo: {
         },
+=======
+>>>>>>> 9ac8985d6c565adcb175fe64b45e439710278395
         reactions: [reactionSchema]
     },
     {
