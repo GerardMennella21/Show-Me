@@ -6,13 +6,13 @@ const imageSchema = new Schema(
     {
         imageText: {
             type: String,
-            required: 'You need to add a caption!',
             minlength: 1,
             maxlength: 280
         },
         img: {
             type: String,
-            data: Buffer
+            data: Buffer,
+            required: true
         },
         createdAt: {
             type: Date,

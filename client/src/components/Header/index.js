@@ -20,16 +20,16 @@ export default function Header() {
                 <nav className="">
                     <Tabs variant='soft-rounded' colorScheme='green'>
                         <TabList>
-                            <Tab><Link to="/">Home</Link></Tab>
+                            <Link to="/"><Tab>Home</Tab></Link>
                             {Auth.loggedIn() ? (
                                 <>
-                                    <Link to="/profile">My Profile</Link>
-                                    <a href="/" onClick={logout}>Logout</a>
+                                    <Link to="/profile"><Tab>My Profile</Tab></Link>
+                                    <a href="/" onClick={logout}><Tab>Logout</Tab></a>
                                 </>
                             ) : (
                                 <>
-                                    <Tab><Link to="/login">Login</Link></Tab>
-                                    <Tab><Link to="/signup">Signup</Link></Tab>
+                                    <Link to="/login"><Tab>Login</Tab></Link>
+                                    <Link to="/signup"><Tab>Signup</Tab></Link>
                                 </>
                             )}
                         </TabList>
