@@ -20,7 +20,6 @@ const imageSchema = new Schema(
             required: true
         },
         photo: {
-            type: DataTypes.STRING
         },
         reactions: [reactionSchema]
     },
