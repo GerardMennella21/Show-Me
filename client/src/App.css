@@ -28,19 +28,12 @@ footer {
   text-align: center;
 }
 
-#Upload {
-  border: 2px solid #FFFCF9;
-  font-size: 35px;
-  text-align: center;
-  padding: 10px;
-  color: #FFFCF9;
-}
-
-#Upload:hover {
-  cursor: pointer;
-}
-
-#fileChoice {
+#fileList {
   color: #FFFCF9;
   list-style: none;
+  text-align: center;
+}
+
+#imageUpload:hover {
+  cursor: pointer;
 }
