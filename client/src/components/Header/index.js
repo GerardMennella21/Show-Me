@@ -2,10 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { Flex, Spacer } from '@chakra-ui/react'
-import { Tabs, TabList, Tab, Button } from '@chakra-ui/react'
-import { Avatar, AvatarBadge, AvatarGroup, Wrap, WrapItem } from '@chakra-ui/react'
-import DrawerProfile from "../ProfileDrawer";
-
+import { Tabs, TabList, Tab} from '@chakra-ui/react'
 
 export default function Header() {
     const logout = event => {
@@ -27,8 +24,9 @@ export default function Header() {
                             <Link to="/"><Tab>Home</Tab></Link>
                             {Auth.loggedIn() ? (
                                 <>
-                                    <Link to="/profile"><Tab>My Profile</Tab></Link>
-                                    <a href="/" onClick={logout}><Tab>Logout</Tab></a>
+                                    <Tab><Link to="/profile">My Profile</Link></Tab>
+                                    <Tab><Link to="/post">Create Post</Link></Tab>
+                                    <Tab><a href="/" onClick={logout}>Logout</a></Tab>
                                     
                                 </>
                             ) : (
@@ -49,9 +47,7 @@ export default function Header() {
 
                             )}
                         </TabList>
-                    </Tabs>    
-                        
-                    
+                    </Tabs>                   
                 </nav>
             </Flex>
         </header>

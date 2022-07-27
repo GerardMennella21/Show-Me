@@ -11,6 +11,7 @@ import Drawer from './components/ProfileDrawer';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
+import Post from './pages/Post'
 
 // Apollo/Routes Imports
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
@@ -44,13 +45,16 @@ function App() {
       <Router>
         <div>
           <Header />
-          
-          <main style={{display: "flex"}}>          
+          <main style={{display: "flex"}}>
                 <Routes>
                   <Route
                     path="/"
                     element={<Home />}
                   />
+                  <Route 
+                    path="/post"
+                    element={<Post />}
+                  />                    
                   <Route
                     path="/login"
                     element={<Login />}
