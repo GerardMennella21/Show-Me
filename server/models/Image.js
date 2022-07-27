@@ -6,9 +6,13 @@ const imageSchema = new Schema(
     {
         imageText: {
             type: String,
-            required: 'You need to add a caption!',
             minlength: 1,
             maxlength: 280
+        },
+        img: {
+            type: String,
+            data: Buffer,
+            required: true
         },
         createdAt: {
             type: Date,
@@ -19,7 +23,7 @@ const imageSchema = new Schema(
             type: String,
             required: true
         },
-        reactions: [reactionSchema]
+        reactions: [reactionSchema],
     },
     {
         toJSON: {

@@ -44,7 +44,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         addReaction(imageId: ID!, reactionBody: String!): Image
         addFriend(friendId: ID!): User
-        uploadImage(filename: String!): String!
+        addImage(imageText: String!): Image
     }
 `
 
