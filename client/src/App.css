@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,700&display=swap');
+
 main {
   min-height: 100vh;
+  background-image: linear-gradient(90deg, #A67DB8, #18F2B2);
 }
 
 header {
   border-bottom: 1px solid black;
+  position: sticky;
+  top: 0;
+  background-image: linear-gradient(80deg, #111D4A, #B1EDE8);
+}
+
+header h1 {
+  font-size: 50px;
+  font-family: 'Titillium Web', sans-serif;
+  color: #FFFCF9;
 }
 
 footer {
   border-top: 1px solid black;
+  background-color: black;
+  color: white;
+  text-align: center;
 }
 
