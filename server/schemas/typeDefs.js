@@ -17,7 +17,6 @@ const typeDefs = gql`
         username: String
         reactionCount: Int
         reactions: [Reaction]
-        photo: String
       }
 
     type Auth {
