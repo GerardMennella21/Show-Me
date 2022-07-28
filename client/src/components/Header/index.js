@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { Flex, Spacer } from '@chakra-ui/react'
-import { Tabs, TabList, Tab} from '@chakra-ui/react'
+import { Tabs, TabList, Tab, Button } from '@chakra-ui/react'
+import { Avatar, AvatarBadge, AvatarGroup, Wrap, WrapItem } from '@chakra-ui/react'
+import DrawerProfile from "../ProfileDrawer";
+
 
 export default function Header() {
     const logout = event => {
@@ -18,6 +21,7 @@ export default function Header() {
                 </Link>
                 <Spacer />
                 <nav className="">
+            
                     <Tabs variant='soft-rounded' colorScheme='green'>
                         <TabList>
                             <Link to="/"><Tab>Home</Tab></Link>
@@ -30,9 +34,15 @@ export default function Header() {
                                 </>
                             ) : (
                                 <>
-                                    <Link to="/login"><Tab>Login</Tab></Link>
-                                    <Link to="/signup"><Tab>Signup</Tab></Link>
+                                        <Link to="/login"><Tab>Login</Tab></Link>
+                                        <Link to="/signup"><Tab>Signup</Tab></Link>                                        
+                                        <Wrap>                                       
+                                                <WrapItem>                                                                              
+                                                    <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' /> 
+                                                </WrapItem>
+                                        </Wrap>
                                 </>
+
                             )}
                         </TabList>
                     </Tabs>                   

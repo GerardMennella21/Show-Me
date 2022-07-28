@@ -5,6 +5,7 @@ import { Flex, Spacer, Box } from '@chakra-ui/react'
 // Components
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Drawer from './components/ProfileDrawer';
 
 // Pages
 import Login from './pages/Login'
@@ -62,8 +63,7 @@ function App() {
                     path="/signup"
                     element={<Signup />}
                   />
-                </Routes>
-         
+                </Routes>   
           </main>
           <Footer />
         </div>
