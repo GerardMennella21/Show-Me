@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Home from './pages/Home'
 import Post from './pages/Post'
+import Profile from './pages/Profile';
 
 // Apollo/Routes Imports
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
@@ -49,6 +50,10 @@ function App() {
                   <Route
                     path="/"
                     element={<Home />}
+                  />
+                  <Route
+                    path="/profile"
+                    element={Profile}
                   />
                   <Route 
                     path="/post"

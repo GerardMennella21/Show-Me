@@ -24,6 +24,20 @@ export const ADD_USER = gql`
   }
 `;
 
+export const ADD_IMAGE = gql`
+  mutation addImage($imageText: String!) {
+    addImage(imageText: $imageText) {
+      _id
+      imageText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+      }
+    }
+  }
+`
 
 export const ADD_FOLLOWER = gql`
   mutation addFollower($id: ID!) {

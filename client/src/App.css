@@ -41,3 +41,14 @@ footer {
 #DZText {
   text-align: center;
 }
+
+.caption {
+  border-top: 2px solid #FFFCF9;
+  border-bottom: 2px solid #FFFCF9;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  text-align: center;
+  color: #FFFCF9;
+  font-size: 14px;
+}

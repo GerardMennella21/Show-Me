@@ -1,21 +1,26 @@
-import React from 'react';
-import { Container } from '@chakra-ui/react';
-import { Image, Box } from '@chakra-ui/react';
-import Auth from '../utils/auth';
-
+import React from "react"
+// import PostList from "../components/List";d
+import Images from "../components/Images";
+import Auth from "../utils/auth";
+import { useQuery } from "@apollo/client";
+import { QUERY_IMAGES} from '../utils/queries'
 
 
 const Home = () => {
-    
+    const { loading, data } = useQuery(QUERY_IMAGES)
+
+    const images = data?.images || []
+
     const loggedIn = Auth.loggedIn();
 
-    return (
-        <div className="flex-row justify-center">
-        <Box boxSize='sm'>
-            <Image src='https://bit.ly/dan-abramov' alt='Dan Abramov' />
-        </Box>
-        </div>
-    );
-};
+    console.log(images)
+
+   return (
+       <div>
+            <Images images={images} />
+       </div>
+   )
+ };
+
 
 export default Home;
