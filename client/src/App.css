@@ -37,3 +37,7 @@ footer {
 #imageUpload:hover {
   cursor: pointer;
 }
+
+#DZText {
+  text-align: center;
+}

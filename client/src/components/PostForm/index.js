@@ -5,9 +5,9 @@ const baseStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  padding: '10px',
+  padding: '25px',
   borderWidth: 2,
-  borderRadius: 2,
+  borderRadius: 5,
   borderColor: '#FFFCF9',
   borderStyle: 'solid',
   color: '#FFFCF9',
@@ -81,7 +81,10 @@ const fileList = files.map(file => (
     <section>
       <div id='imageUpload' {...getRootProps({style})}>
         <input {...getInputProps()} />
-        <div >Upload An Image</div>
+        <div id='DZText'>
+            Upload An Image <br />
+            (Click or Drag & Drop)
+        </div>
       </div>
       <aside>
         {thumbs}
