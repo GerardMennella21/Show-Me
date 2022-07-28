@@ -24,23 +24,22 @@ export default function Header() {
             
                     <Tabs variant='soft-rounded' colorScheme='green'>
                         <TabList>
-                            <Link to="/"><Tab>Home</Tab></Link>
+                            <Tab><Link to="/">Home</Link></Tab>
                             {Auth.loggedIn() ? (
                                 <>
                                     <Tab><Link to="/profile">My Profile</Link></Tab>
                                     <Tab><Link to="/post">Create Post</Link></Tab>
                                     <Tab><a href="/" onClick={logout}>Logout</a></Tab>
-                                    
+                                    <Wrap>                                       
+                                        <WrapItem>                                                                              
+                                            <Avatar/> 
+                                        </WrapItem>
+                                    </Wrap>
                                 </>
                             ) : (
                                 <>
                                         <Link to="/login"><Tab>Login</Tab></Link>
                                         <Link to="/signup"><Tab>Signup</Tab></Link>                                        
-                                        <Wrap>                                       
-                                                <WrapItem>                                                                              
-                                                    <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' /> 
-                                                </WrapItem>
-                                        </Wrap>
                                 </>
 
                             )}

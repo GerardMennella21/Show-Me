@@ -60,6 +60,34 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addReaction: async (parent, { imageId, reactionBody }, context) => {
+      if (context.user) {
+        const updatedImage = await Image.findOneAndUpdate(
+          { _id: imageId },
+          { $push: { reactions: { reactionBody, username: context.user.username } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedImage;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    // addImage: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const image = await Image.create({ ...args, username: context.user.username });
+
+    //     await User.findByIdAndUpdate(
+    //       { _id: context.user._id },
+    //       { $push: { images: image._id } },
+    //       { new: true }
+    //     );
+
+    //     return image;
+    //   }
+
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
