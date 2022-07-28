@@ -7,11 +7,7 @@ const imageSchema = new Schema(
         imageText: {
             type: String,
             minlength: 1,
-            maxlength: 280
-        },
-        img: {
-            type: String,
-            data: Buffer,
+            maxlength: 280,
             required: true
         },
         createdAt: {
