@@ -40,12 +40,12 @@ export const ADD_IMAGE = gql`
 `
 
 export const ADD_FOLLOWER = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+  mutation addFollower($id: ID!) {
+    addFollower(followerId: $id) {
       _id
       username
-      friendCount
-      friends {
+      followerCount
+      followers {
         _id
         username
       }
