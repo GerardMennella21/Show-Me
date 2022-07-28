@@ -2,7 +2,10 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express')
 const { authMiddleware } = require('./utils/auth');
 const path = require('path');
-const fs = require('fs')
+const multer = require("multer");
+const {
+  GridFsStorage
+} = require("multer-gridfs-storage");
 
 const { typeDefs, resolvers } = require('./schemas')
 const db = require('./config/connection');
@@ -33,6 +36,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   })
 
   db.once('open', () => {
+    
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
