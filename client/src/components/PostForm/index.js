@@ -1,5 +1,5 @@
 import React, {useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+// import { useDropzone } from 'react-dropzone';
 import { ADD_IMAGE } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
