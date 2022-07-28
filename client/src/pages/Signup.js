@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { FormControl, Button, FormLabel, FormErrorMessage, FormHelperText, Input } from '@chakra-ui/react'
+import {
+  Flex,
+  Heading,
+  Input,
+  Button,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
 const Signup = () => {
+  const formBackground = useColorModeValue('gray.100, gray.700')
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser, { error }] = useMutation(ADD_USER);
   
@@ -39,45 +46,52 @@ const Signup = () => {
   };
 
   return (
-      <div className=''>
-        <div className=''>
-          <h4 className=''>Sign Up</h4>
-          <div className=''>
-            <FormControl>
-              <Input
-                placeholder='Your username'
-                name='username'
-                type='username'
-                id='username'
-                value={formState.username}
-                onChange={handleChange}
-              />
-              <Input
-                placeholder='Your email'
-                name='email'
-                type='email'
-                id='email'
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <Input
-                placeholder='******'
-                name='password'
-                type='password'
-                id='password'
-                value={formState.password}
-                onChange={handleChange}
-              />
-              </FormControl>
-              <Button onClick={handleFormSubmit}>
-                Submit
-              </Button>
-            
-            {error && <div>Sign up failed</div>}
-          </div>
-        </div>
-      </div>
-  );
+    <Flex h="100vh" alignItems="center" justifyContent="center">
+    <Flex
+      flexDirection="column"
+      bg={formBackground}
+      p={12}
+      borderRadius={8}
+      boxShadow="lg"
+    >
+      <Heading mb={6}>Sign Up</Heading>
+      <Input 
+        placeholder="username"
+        type="username"
+        variant="filled"
+        name="username"
+        id="username"
+        mb={3}
+        value={formState.username}
+        onChange={handleChange}
+      />
+      <Input
+        placeholder="johndoe@gmail.com"
+        type="email"
+        variant="filled"
+        name="email"
+        id="email"
+        mb={3}
+        value={formState.email}
+        onChange={handleChange}
+      />
+      <Input
+        placeholder="**********"
+        type="password"
+        variant="filled"
+        mb={6}
+        name="password"
+        id="password"
+        value={formState.password}
+        onChange={handleChange}
+      />
+      <Button colorScheme="teal" mb={8} onClick={handleFormSubmit}>
+        Sign Up
+      </Button>
+      {error && <div>Login failed</div>}
+    </Flex>
+  </Flex>
+);
 };
 
 export default Signup;

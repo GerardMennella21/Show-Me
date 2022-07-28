@@ -2,7 +2,10 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import { Flex, Spacer } from '@chakra-ui/react'
-import { Tabs, TabList, Tab} from '@chakra-ui/react'
+import { Tabs, TabList, Tab, Button } from '@chakra-ui/react'
+import { Avatar, AvatarBadge, AvatarGroup, Wrap, WrapItem } from '@chakra-ui/react'
+import DrawerProfile from "../ProfileDrawer";
+
 
 export default function Header() {
     const logout = event => {
