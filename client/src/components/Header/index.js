@@ -35,17 +35,12 @@ export default function Header() {
                             ) : (
                                 <>
                                         <Link to="/login"><Tab>Login</Tab></Link>
-                                        <Link to="/signup"><Tab>Signup</Tab></Link>
-
-                                        
-                                    <Wrap>
-                                        
-                                            <WrapItem>
-                                                                              
-                                                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' /> 
-                                            </WrapItem>
-                                          
-                                    </Wrap>
+                                        <Link to="/signup"><Tab>Signup</Tab></Link>                                        
+                                        <Wrap>                                       
+                                                <WrapItem>                                                                              
+                                                    <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' /> 
+                                                </WrapItem>
+                                        </Wrap>
                                 </>
 
                             )}
